@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ExceptionsApplication<exceptions>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.demo.app.exceptions.exceptions.ExceptionsApplication",
+            "projectName": "exceptions",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
