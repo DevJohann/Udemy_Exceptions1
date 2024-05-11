@@ -1,6 +1,7 @@
 package co.demo.app.exceptions.exceptions.controller;
 
 import java.util.Date;
+import java.util.NoSuchElementException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,5 +46,19 @@ public class HandlerExceptionController {
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR.value()).body(error);
     }
+
+    
+    @ExceptionHandler(NoSuchElementException.class)
+    public ResponseEntity<Error> noSuchUserException(NoSuchElementException e){
+        Error error = new Error();
+
+        error.setDate(new Date());
+        error.setError("No existe este usuario");
+        error.setMessage(e.getMessage());
+        error.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR.value()).body(error);
+    }
+    
 }
 
